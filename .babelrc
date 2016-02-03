@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "add-module-exports",
+    "syntax-export-extensions",
+    "transform-export-extensions"
+  ],
+  "presets": ["es2015", "stage-0", "react"],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}

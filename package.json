@@ -1,0 +1,40 @@
+{
+  "name": "katapotter",
+  "version": "1.0.0",
+  "description": "Kata Potter http://www.codingdojo.org/cgi-bin/index.pl?action=browse&id=KataPotter&revision=41",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node devServer.js",
+    "test": "mocha src/**/*.spec.js --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-syntax-export-extensions": "^6.3.13",
+    "babel-plugin-transform-export-extensions": "^6.4.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.0",
+    "babel-preset-stage-0": "^6.3.13",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "postcss-browser-reporter": "^0.4.0",
+    "postcss-cssnext": "^2.4.0",
+    "postcss-import": "^8.0.2",
+    "postcss-loader": "^0.8.0",
+    "postcss-reporter": "^1.3.1",
+    "postcss-url": "^5.1.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.12",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.6.4"
+  }
+}
