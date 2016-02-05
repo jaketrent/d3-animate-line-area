@@ -1,7 +1,7 @@
 body {
+  background: #222222;
 }
 svg {
-  outline: 1px solid red;
 }
 
 .axis {
@@ -25,26 +25,24 @@ svg {
   stroke: #ababab;
   stroke-width: 1;
 }
-.area {
-  fill: rgba(249, 104, 22, .5);
+.areaOnMask {
+  fill: white;
+  opacity: 0.5;
   stroke: none;
 }
-.areagrad {
-  fill: rgba(249, 104, 22, .5);
-  stroke: none;
-}
-.areagradTop {
-  stop-color: orange;
-  stop-opacity: 1;
-}
-.areagradBottom {
-  stop-color: pink;
-  stop-opacity: 1;
-}
-.line {
+.lineOnMask {
   fill: none;
-  stroke: orange;
+  stroke: white;
   stroke-width: 3px;
+  opacity: 1;
+}
+.areaGradTop {
+  stop-color: #F96816;
+  stop-opacity: 1;
+}
+.areaGradBottom {
+  stop-color: #F96816;
+  stop-opacity: 0.8;
 }
 .point {
   stroke: orange;

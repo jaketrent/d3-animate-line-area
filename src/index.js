@@ -46,11 +46,11 @@ const svg = d3.select('#app')
 const defs = svg.append('defs')
 
 const mask = defs.append('mask')
-  .attr('id', 'areamask')
+  .attr('id', 'areaMask')
 
 const grad = defs.append('linearGradient')
   .attr({
-    id: 'areagrad',
+    id: 'areaGrad',
     x1: '0%',
     y1: '0%',
     x2: '0%',
@@ -59,19 +59,24 @@ const grad = defs.append('linearGradient')
 
 grad.append('stop')
   .attr({
-    offset: '0%',
-    class: css.areagradTop
+    offset: '80%',
+    class: css.areaGradTop
   })
 grad.append('stop')
   .attr({
     offset: '100%',
-    class: css.areagradBottom
+    class: css.areaGradBottom
   })
 
 mask.append('path')
   .datum(data)
-  .attr('class', css.areagrad)
+  .attr('class', css.areaOnMask)
   .attr('d', area)
+
+mask.append('path')
+  .datum(data)
+  .attr('class', css.lineOnMask)
+  .attr('d', line)
 
 svg.append('rect')
   .attr({
@@ -79,12 +84,10 @@ svg.append('rect')
     y: 0,
     width: 0,
     height,
-    mask: 'url(#areamask)',
-    fill: 'url(#areagrad)',
-    class: css.areagrad
+    mask: 'url(#areaMask)',
+    fill: 'url(#areaGrad)'
   })
   .transition()
-    .delay(duration * 0.1)
     .duration(duration)
     .attr({
       width
@@ -98,23 +101,3 @@ svg.append('g')
 svg.append('g')
     .attr('class', css.axis)
     .call(yAxis)
-
-const linePath = svg.append('path')
-  .datum(data)
-  .attr('class', css.line)
-  .attr('d', line)
-
-const numNodes = linePath.node().getTotalLength()
-
-linePath
-  .attr('stroke-dasharray', numNodes + ' ' + numNodes)
-  .attr('stroke-dashoffset', numNodes)
-  .transition()
-  .duration(duration)
-  .ease('linear')
-  .attr('stroke-dashoffset', 0)
-
-// svg.append('path')
-//   .datum(data)
-//   .attr('class', css.area)
-//   .attr('d', area)
