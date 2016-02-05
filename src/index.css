@@ -1,4 +1,53 @@
 body {
-  background-color: black;
-  color: white;
+}
+svg {
+  outline: 1px solid red;
+}
+
+.axis {
+  font-size: 12px;
+}
+
+.axis :global path,
+.axis :global line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis :global text {
+  fill: #000;
+}
+.axis :global path,
+.axis :global .tick line {
+  /*display: none;*/
+}
+.grid :global .tick line {
+  stroke: #ababab;
+  stroke-width: 1;
+}
+.area {
+  fill: rgba(249, 104, 22, .5);
+  stroke: none;
+}
+.areagrad {
+  fill: rgba(249, 104, 22, .5);
+  stroke: none;
+}
+.areagradTop {
+  stop-color: orange;
+  stop-opacity: 1;
+}
+.areagradBottom {
+  stop-color: pink;
+  stop-opacity: 1;
+}
+.line {
+  fill: none;
+  stroke: orange;
+  stroke-width: 3px;
+}
+.point {
+  stroke: orange;
+  stroke-width: 2px;
+  fill: blue;
 }
